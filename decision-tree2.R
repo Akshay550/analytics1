@@ -23,3 +23,4 @@ ndata1
 (p1=predict(ctree, newdata=ndata1, type='class'))
 (p2=predict(ctree, newdata=ndata1, type='prob'))
 cbind(ndata1,p1,p2)
+ndata1
