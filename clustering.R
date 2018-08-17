@@ -23,3 +23,28 @@ irisk1$cluster
 irisk1$centers
 colMeans(iris1[irisk1$cluster==1,])
 
+(iris[irisk1$cluster==1,])
+
+plot(iris1$Sepal.Length, col=1:3)
+
+#Selecting number of clusters
+
+library(NbClust)
+head(iris1)
+km1=kmeans(iris1, centers = 1)
+km1$tot.withinss
+
+km2=kmeans(iris1, centers = 2)
+km2$tot.withinss
+km2$withinss
+
+km3=kmeans(iris1, centers = 3)
+km3$tot.withinss
+
+
+nc=NbClust(iris1, distance = "euclidean", min.nc=2, max.nc=15, method="average")
+
+mtcars
+names(mtcars)
+data2= mtcars[c('mpg', 'disp','hp','wt')]
+nc=NbClust(data2, distance = "euclidean", min.nc=2, max.nc=15, method="average")
